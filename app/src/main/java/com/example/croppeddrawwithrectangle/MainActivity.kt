@@ -59,42 +59,22 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun Bitmap.cropRectangle(
-        newWidth: Int = this.width,
-        newHeight: Int = this.height
-    ): Bitmap? {
+    private fun Bitmap.cropRectangle(newWidth: Int = this.width, newHeight: Int = this.height): Bitmap? {
         return try {
-            Bitmap.createBitmap(
-                this,
-                0,
-                0,
-                newWidth,
-                newHeight
-            )
+            Bitmap.createBitmap(this, 0, 0, newWidth, newHeight)
         } catch (e: IllegalArgumentException) {
             null
         }
     }
 
-    private fun Bitmap.drawRectangle(
-        width: Int = this.width,
-        height: Int = this.height
-    ): Bitmap? {
+    private fun Bitmap.drawRectangle(width: Int = this.width, height: Int = this.height): Bitmap? {
         val bitmap = copy(config, true)
         val canvas = Canvas(bitmap)
 
         Paint().apply {
             color = Color.BLACK
             style = Paint.Style.STROKE
-
-            // draw rectangle on canvas
-            canvas.drawRect(
-                0f,
-                0f,
-                width.toFloat(),
-                height.toFloat(),
-                this
-            )
+            canvas.drawRect(0f, 0f, width.toFloat(), height.toFloat(), this)
         }
         return bitmap
     }
