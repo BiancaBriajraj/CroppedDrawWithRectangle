@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CroppedDrawWithRectangle</string>
+    <string name="crop_drawable">Crop Drawable</string>
+    <string name="todo">todo</string>
+    <string name="crop">Crop</string>
+    <string name="width">Width</string>
+    <string name="height">Height</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.croppeddrawwithrectangle
 
+import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
@@ -11,6 +12,7 @@ import androidx.core.graphics.drawable.toBitmap
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -43,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                     if (newHeight > height || newWidth > width) {
                         dimensionsCroppedImageTextView.text = "Dimensions exceed original image"
                     } else {
-                        bitmap?.apply {
+                        bitmap.apply {
                             cropRectangle(
                                 newWidth,
                                 newHeight
